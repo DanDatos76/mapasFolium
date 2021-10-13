@@ -8,27 +8,12 @@ import matplotlib.pyplot as plt
  
 
  
-'''
-location1 = geolocator.geocode("General Pinto 3974, Jose C Paz")
-location2 = geolocator.geocode("Craig 1865, Merlo")
-location3 = geolocator.geocode(" Villa Sanagasta")
-print(location1.address)
-print((location1.latitude, location1.longitude))
-print((location2.latitude, location2.longitude))
-print((location3.latitude, location3.longitude))
-print(location1.raw)
-'''
 #mi_mapa = folium.Map(location=(-34.5459451, -58.7535187), zoom_start=5,  tiles= "Stamen Toner")
 mi_mapa = folium.Map(location=(-34.5459451, -58.7535187), zoom_start=5,  tiles="Stamen Terrain")
-html = "<p>primera geolocalizacion</p><p>CASA DE MARIA MACHACA</p>"
-iframe1 = branca.element.IFrame(html=html, width=250, height=150)
 
 
-html2 = "<h1>NUESTRA CASA</h1><h2> esto es un subtitulo</h2>"
-iframe2 = branca.element.IFrame(html=html2, width=250, height=150)
 
-html3 = "<h1>Villa Sanagasta</h1><h2> CASA DE CLAUDIA</h2><img src='img2.png'>"
-iframe3 = branca.element.IFrame(html=html3, width=250, height=150)
+
 
 html4 = "<h1>PROVINCIA DE BUENOS AIRES</h1>"
 iframe4 = branca.element.IFrame(html=html4, width=250, height=150)
@@ -93,19 +78,11 @@ iframe23 = branca.element.IFrame(html=html23, width=250, height=150)
 html24 = "<h1>PROVINCIA DE CHUBUT</h1>"
 iframe24 = branca.element.IFrame(html=html24, width=250, height=150)
 
+html25 = "<h1>PROVINCIA DE SANTA CRUZ</h1>"
+iframe25 = branca.element.IFrame(html=html25, width=250, height=150)
 
 
 
-marcador1 = folium.Marker(location=(-34.5459400, -58.7535187),   popup=folium.Popup(iframe2, max_width=500),
-    icon=folium.Icon(color="purple",spin= "True",icon= "home", icon_shape ="circle"))
-marcador1.add_to(mi_mapa)
-
-marcador2 = folium.Marker(location=(-34.6935665, -58.6596387),   popup=folium.Popup(iframe1, max_width=500),
-    icon=folium.Icon(color="red",icon= "cloud"))
-
-
-marcador3 = folium.Marker(location=(-29.2860467, -67.0206767),   popup=folium.Popup(iframe3, max_width=500),
-    icon=folium.Icon(color="green",icon= "camera"))
 buenosaires = folium.Marker(location=(-34.61315, -58.37723),   popup=folium.Popup(iframe4, max_width=500),
     icon=folium.Icon(color="blue"))
 buenosaires.add_to(mi_mapa)
@@ -172,9 +149,9 @@ chubut = folium.Marker(location=(-43.2999, -65.0995),   popup=folium.Popup(ifram
     icon=folium.Icon(color="green"))
 chubut.add_to(mi_mapa)
   
-marcador1.add_to(mi_mapa)
-marcador2.add_to(mi_mapa)
-marcador3.add_to(mi_mapa)
+stacruz = folium.Marker(location=(-48.7737, -69.1917),   popup=folium.Popup(iframe25, max_width=500),
+    icon=folium.Icon(color="green"))
+stacruz.add_to(mi_mapa)
 
 
 mi_mapa.save("mapa4.html")
